@@ -53,8 +53,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.0"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/stop_ic"/>
+                    android:scaleType="centerInside"/>
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:layout_width="match_parent"
