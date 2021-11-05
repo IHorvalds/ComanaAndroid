@@ -42,10 +42,36 @@
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/centerShim_horizontal_bike_ride">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/warning_ic"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/stop_ic"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/warning_ic"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/left_ic"/>
+            </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
@@ -53,10 +79,37 @@
             android:layout_height="match_parent"
             android:layout_toRightOf="@id/centerShim_horizontal_bike_ride">
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/stop_ic"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/dog_ic"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/stop_ic"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/right_ic"/>
+            </LinearLayout>
         </RelativeLayout>
 
     </RelativeLayout>
