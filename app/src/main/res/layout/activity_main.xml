@@ -6,24 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/centerShim"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        android:visibility="invisible"
+    <TextView
+        android:id="@+id/welcome_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_app"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:layout_marginTop="73dp"
+        android:layout_marginBottom="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="245dp"
-        android:layout_height="223dp"
-        app:layout_constraintBottom_toTopOf="@+id/centerShim"
+    <TextView
+        android:id="@+id/app_description_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:layout_marginVertical="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/comana_title_logo_transparent" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_textview"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/bicycle_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:scaleType="centerInside"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="bicycle.json"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_description_textview"
+        />
 
     <Button
         android:id="@+id/new_group_button"
@@ -33,6 +54,6 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/centerShim" />
+        app:layout_constraintTop_toBottomOf="@+id/bicycle_animation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 /* Cryptography */
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         shared = getSharedPreferences("User" , Context.MODE_PRIVATE)
         var uuid = shared.getString("uuid", "")
-        println("[before] uuid=" + uuid)
+        Log.v("mylog","[before] uuid=" + uuid)
         if (uuid == "") {
             val editor = shared.edit()
             editor.putString("uuid", randomID())
@@ -92,10 +93,10 @@ class MainActivity : AppCompatActivity() {
             // TODO: put a loader: inform that the group is being created.
 
             // Generate the group key for symmetric encryption.
-            val groupKey = randomID()
+            val publicGroupKey = randomID()
 
             // Set the key.
-            AESKnowledgeFactory.setKey(groupKey)
+            AESKnowledgeFactory.setKey(publicGroupKey)
 
             // And start the activity.
             startActivity(intent)

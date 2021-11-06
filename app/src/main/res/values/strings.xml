@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Comana</string>
+    <string name="welcome_to_app">Welcome to Comana!</string>
+    <string name="app_description">Simple group coordination.</string>
 </resources>
