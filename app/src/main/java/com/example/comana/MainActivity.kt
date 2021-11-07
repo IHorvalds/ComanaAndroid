@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 
 /* Cryptography */
 import javax.crypto.Cipher
@@ -20,6 +22,107 @@ import java.util.*
 private fun randomID(): String = List(16) {
     (('a'..'z') + ('A'..'Z') + ('0'..'9')).random()
 }.joinToString("")
+
+private fun randomUsername(): String {
+    // Positive adjectives. 44 of them.
+    val adjectives: Array<String> = arrayOf(
+        "Adaptable",
+        "Adventurous",
+        "Amarous",
+        "diligent",
+        "Humble",
+        "Courageous",
+        "Efficient",
+        "Enchanting",
+        "Generous",
+        "Magnetic",
+        "Likeable",
+        "Sincere",
+        "Trustworthy",
+        "Resourceful",
+        "Wise",
+        "Resilient",
+        "Reliable",
+        "Determined",
+        "Strong",
+        "Stupendous",
+        "Exceptional",
+        "Generous",
+        "Kind",
+        "Persuasive",
+        "Vivacious",
+        "Witty",
+        "Extraordinary",
+        "Divine",
+        "Breathtaking",
+        "Flawless",
+        "Magnificent",
+        "Lively",
+        "Versatile",
+        "Amazing",
+        "Outgoing",
+        "amicable",
+        "Friendly",
+        "Perseverant",
+        "Enthusiastic",
+        "Affectionate",
+        "Thoughtful",
+        "Modest",
+        "Hygienic",
+        "Considerate",
+        "Courteous"
+    )
+
+    // Cute animals. 44 of them
+    val animals: Array<String> = arrayOf(
+        "Red Panda",
+        "Quokka",
+        "Panda",
+        "Dog",
+        "Fennec Fox",
+        "Rabbit",
+        "Koala",
+        "Otter",
+        "Meerkat",
+        "Hedgehog",
+        "Raccoon",
+        "Flamingo",
+        "Cat",
+        "Lion",
+        "Hamster",
+        "Parrot",
+        "Chameleon",
+        "Tiger",
+        "Turtle",
+        "Squirrel",
+        "Frog",
+        "Bear",
+        "Pangolin",
+        "Armadillo",
+        "Beaver",
+        "Xerus",
+        "Fossa",
+        "Cuttlefish",
+        "Narwhal",
+        "Lynx",
+        "Pika",
+        "Klipspringer",
+        "Margay",
+        "Capybara",
+        "Quoll",
+        "Bongo",
+        "Axolotl",
+        "Kangaroo",
+        "Bearded Tamarin",
+        "Dolphin",
+        "Owl",
+        "Wolf",
+        "Sea Lion",
+        "Deer",
+        "Walrus"
+    )
+    return adjectives.random() + " " + animals.random()
+}
 
 // Inspired from: https://www.knowledgefactory.net/2021/01/kotlin-aes-rsa-3des-encryption-and.html
 object AESKnowledgeFactory {
@@ -74,17 +177,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        shared = getSharedPreferences("User" , Context.MODE_PRIVATE)
-        var uuid = shared.getString("uuid", "")
+        shared = getSharedPreferences("com.example.comana.UserUUID" , Context.MODE_PRIVATE)
+        val uuid = shared.getString("uuid", "")
+        val username = shared.getString("username", "")
         Log.v("mylog","[before] uuid=" + uuid)
         if (uuid == "") {
             val editor = shared.edit()
             editor.putString("uuid", randomID())
             editor.commit()
         }
+        if (username == "") {
+            val editor = shared.edit()
+            editor.putString("username", randomUsername())
+            editor.commit()
+        }
         var check_uuid = shared.getString("uuid", "")
         assert(check_uuid != "")
         println("[after] uuid=" + check_uuid)
+
+        val uuidTextView = findViewById<TextView>(R.id.userid_textview)
+        uuidTextView.text = check_uuid
+        val usernameTextView = findViewById<TextView>(R.id.username_textview)
+        usernameTextView.text = shared.getString("username", "")
 
         val newGroupButton = findViewById<Button>(R.id.new_group_button)
         newGroupButton.setOnClickListener {

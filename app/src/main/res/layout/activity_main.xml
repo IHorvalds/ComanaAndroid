@@ -46,6 +46,62 @@
         app:layout_constraintTop_toBottomOf="@id/app_description_textview"
         />
 
+    <TextView
+        android:id="@+id/your_id_description_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/your_id_description"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bicycle_animation"/>
+
+    <TextView
+        android:id="@+id/userid_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/your_id_description"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="16dp"
+        android:textAlignment="textStart"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/your_id_description_textview"/>
+
+    <TextView
+        android:id="@+id/your_username_description_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/your_username_description"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userid_textview"/>
+
+    <TextView
+        android:id="@+id/username_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/your_username_description"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="16dp"
+        android:textAlignment="textStart"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/your_username_description_textview"/>
+
     <Button
         android:id="@+id/new_group_button"
         android:layout_width="wrap_content"
@@ -54,6 +110,6 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bicycle_animation" />
+        app:layout_constraintTop_toBottomOf="@+id/your_username_description_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
