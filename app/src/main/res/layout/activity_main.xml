@@ -1,115 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/welcome_textview"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_to_app"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:textAlignment="center"
-        android:layout_marginTop="73dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <TextView
-        android:id="@+id/app_description_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_description"
-        android:textColor="#808080"
-        android:textSize="16sp"
-        android:textAlignment="center"
-        android:layout_marginVertical="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_textview"/>
+        <TextView
+            android:id="@+id/welcome_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to_app"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textAlignment="center"
+            android:layout_marginTop="73dp"
+            android:layout_marginBottom="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/bicycle_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:scaleType="centerInside"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="bicycle.json"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_description_textview"
-        />
+        <TextView
+            android:id="@+id/app_description_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_description"
+            android:textColor="#808080"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_textview"/>
 
-    <TextView
-        android:id="@+id/your_id_description_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/your_id_description"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bicycle_animation"/>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/bicycle_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:scaleType="centerInside"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="bicycle.json"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_description_textview"
+            />
 
-    <TextView
-        android:id="@+id/userid_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/your_id_description"
-        android:textColor="#808080"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="16dp"
-        android:textAlignment="textStart"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/your_id_description_textview"/>
+        <Button
+            android:id="@+id/new_group_button"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:text="New Group"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bicycle_animation" />
 
-    <TextView
-        android:id="@+id/your_username_description_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/your_username_description"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userid_textview"/>
+        <Button
+            android:id="@+id/existing_group_button"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:text="Existing Group"
+            android:textAllCaps="false"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_group_button" />
 
-    <TextView
-        android:id="@+id/username_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/your_username_description"
-        android:textColor="#808080"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="16dp"
-        android:textAlignment="textStart"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/your_username_description_textview"/>
-
-    <Button
-        android:id="@+id/new_group_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Group"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/your_username_description_textview" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

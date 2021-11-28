@@ -6,9 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 /* Cryptography */
 import javax.crypto.Cipher
@@ -19,7 +17,7 @@ import java.security.MessageDigest
 import java.util.*
 
 // Inspired from: https://www.codegrepper.com/code-examples/kotlin/kotlin+generate+a+random+key
-private fun randomID(): String = List(16) {
+public fun randomID(): String = List(16) {
     (('a'..'z') + ('A'..'Z') + ('0'..'9')).random()
 }.joinToString("")
 
@@ -173,6 +171,7 @@ object AESKnowledgeFactory {
 
 class MainActivity : AppCompatActivity() {
     lateinit var shared : SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -181,13 +180,12 @@ class MainActivity : AppCompatActivity() {
         val uuid = shared.getString("uuid", "")
         val username = shared.getString("username", "")
         Log.v("mylog","[before] uuid=" + uuid)
+        val editor = shared.edit()
         if (uuid == "") {
-            val editor = shared.edit()
             editor.putString("uuid", randomID())
             editor.commit()
         }
         if (username == "") {
-            val editor = shared.edit()
             editor.putString("username", randomUsername())
             editor.commit()
         }
@@ -195,22 +193,14 @@ class MainActivity : AppCompatActivity() {
         assert(check_uuid != "")
         println("[after] uuid=" + check_uuid)
 
-        val uuidTextView = findViewById<TextView>(R.id.userid_textview)
-        uuidTextView.text = check_uuid
-        val usernameTextView = findViewById<TextView>(R.id.username_textview)
-        usernameTextView.text = shared.getString("username", "")
-
         val newGroupButton = findViewById<Button>(R.id.new_group_button)
         newGroupButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, BikeRideActivity::class.java)
+            val intent = Intent(this@MainActivity, NewGroupActivity::class.java)
+            // val intent = Intent(this@MainActivity, BikeRideActivity::class.java)
 
             // TODO: put a loader: inform that the group is being created.
 
-            // Generate the group key for symmetric encryption.
-            val publicGroupKey = randomID()
 
-            // Set the key.
-            AESKnowledgeFactory.setKey(publicGroupKey)
 
             // And start the activity.
             startActivity(intent)

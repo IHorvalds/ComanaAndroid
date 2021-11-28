@@ -4,4 +4,8 @@
     <string name="app_description">Simple group coordination.</string>
     <string name="your_id_description">Your unique ID:</string>
     <string name="your_username_description">Your current Username:</string>
+    <string name="scan_qr">Invite people to scan this</string>
+    <string name="copy_qr">or copy the code below</string>
+    <string name="start_button">Let\'s go!</string>
+
 </resources>
